@@ -1,0 +1,13 @@
+[
+  {
+    "name": "Maria",
+    "interests": ["Coding", "Animals", "Harry Potter"],
+    "experience": [
+      "Manager in crewing company",
+      "Student at IT courses",
+      "Junior HTML+CSS",
+      "JS/React/Node.JS",
+      "Web-Developer at PicsTeam"
+    ]
+  }
+]
