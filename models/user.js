@@ -7,6 +7,9 @@ const userSchema = new Schema({
   name: {
     type: String,
   },
+  country: {
+    type: String,
+  },
   interests: [
     {
       type: String,

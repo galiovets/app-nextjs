@@ -2,11 +2,17 @@ import dbConnect from "../../lib/dbConnect";
 import User from "../../models/user";
 
 export default async function profileData(req, res) {
-  await dbConnect();
+  if (req.method === "GET") {
+    await dbConnect();
 
-  const users = await User.find({});
+    const users = await User.find({});
 
-  res.status(200).json({
-    users,
-  });
+    if (!users) {
+      return;
+    }
+
+    res.status(200).json({
+      users,
+    });
+  }
 }
