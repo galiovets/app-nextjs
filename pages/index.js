@@ -7,7 +7,8 @@ import Container from "../components/Container";
 import Socials from "../components/Socials";
 
 export default function Home() {
-  const [name, setName] = useState([]);
+  const [name, setName] = useState("");
+  const [country, setCountry] = useState("");
   const [interests, setInterests] = useState([]);
   const [experience, setExperience] = useState([]);
   const [socials, setSocials] = useState({});
@@ -16,6 +17,9 @@ export default function Home() {
     fetchData().then((users) => {
       users.map(({ name }) => {
         setName(name);
+      });
+      users.map(({ country }) => {
+        setCountry(country);
       });
       users.map(({ interests }) => {
         setInterests(interests);
@@ -36,16 +40,19 @@ export default function Home() {
       <Container>
         <h1>Web Developer CV</h1>
         <h2>Hello, my name is {name}</h2>
-        <p>
-          I am junior dev with stack HTML+CSS/JS/React.js/Node.js. Currently I
-          am working on website for NFT projec. I’ve joined the team of
-          founder/Pm and artist after their first collection. Deployed on
-          OpenSea. Now it will be full website with twitter and discord. This is
-          practically our first project. So stay tuned, I promise I’ll share
-          some of NFT with you =). We are a little team of enthusiasts. And I’ll
-          looking forward for become web 3 dev. Now student at doge academy,
-          learning many new things about crypto, SOL and blockchain.
-        </p>
+        {
+          <p>
+            I am junior dev with stack HTML+CSS/JS/React.js/Node.js from{" "}
+            {country} &#127482;&#127462;. Currently I am working on website for
+            NFT projecе. I’ve joined the team of founder/Pm and artist after
+            their first collection. Deployed on OpenSea. Now it will be full
+            website with twitter and discord. This is practically our first
+            project. So stay tuned, I promise I’ll share some of NFT with you
+            :). We are a little team of enthusiasts. And I’ll looking forward
+            for become web 3 dev. Now student at doge academy, learning many new
+            things about crypto, SOL and blockchain.
+          </p>
+        }
         <h3>Interests</h3>
         <DataList collection={interests} />
         <h3>Previous Experience</h3>

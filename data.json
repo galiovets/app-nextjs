@@ -1,6 +1,7 @@
 [
   {
     "name": "Maria",
+    "country": "Ukraine",
     "interests": ["Coding", "Animals", "Harry Potter", "Stretching"],
     "experience": [
       "Manager in crewing company",
