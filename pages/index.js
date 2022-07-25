@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import { fetchData } from "../service/fetchData";
 import DataList from "../components/DataList";
 import Container from "../components/Container";
-import styles from "../styles/Home.module.css";
 
 export default function Home() {
   const [name, setName] = useState([]);
@@ -47,8 +46,38 @@ export default function Home() {
 
       <style jsx>
         {`
-          ul {
-            color: red;
+          h1 {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            margin: -1px;
+            border: 0;
+            padding: 0;
+            clip: rect(0 0 0 0);
+            overflow: hidden;
+          }
+
+          h2 {
+            margin: 40px auto 20px;
+            font-weight: 600;
+            font-size: 35px;
+            letter-spacing: 0.05em;
+            text-align: center;
+          }
+
+          p {
+            // max-width: 768px;
+            margin-bottom: 40px;
+            font-size: 20px;
+            line-height: 1.2;
+          }
+
+          h3 {
+            margin-bottom: 25px;
+            font-weight: 500;
+            font-size: 25px;
+            letter-spacing: 0.05em;
+            text-align: center;
           }
         `}
       </style>

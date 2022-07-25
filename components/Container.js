@@ -15,6 +15,7 @@ function Container({ children }) {
       <style jsx>
         {`
           main {
+            max-width: 1080px;
             margin-left: auto;
             margin-right: auto;
             padding: 0 20px 20px 20px;
