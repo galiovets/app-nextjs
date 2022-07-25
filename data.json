@@ -1,13 +1,16 @@
 [
   {
     "name": "Maria",
-    "interests": ["Coding", "Animals", "Harry Potter"],
+    "interests": ["Coding", "Animals", "Harry Potter", "Stretching"],
     "experience": [
       "Manager in crewing company",
       "Student at IT courses",
-      "Junior HTML+CSS",
-      "JS/React/Node.JS",
+      "Junior HTML+CSS, JS/React/Node.JS",
       "Web-Developer at PicsTeam"
-    ]
+    ],
+    "socials": {
+      "github": "https://github.com/galiovets",
+      "linkedin": "https://www.linkedin.com/in/maria-galiovets-421b18153/"
+    }
   }
 ]

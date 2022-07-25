@@ -11,7 +11,7 @@ function DataList({ collection, icon }) {
         {`
           ul {
             display: flex;
-            // flex-wrap: wrap;
+            flex-wrap: wrap;
             margin-left: -20px;
             text-align: center;
             justify-content: space-around;
@@ -21,7 +21,7 @@ function DataList({ collection, icon }) {
           }
 
           li {
-            flex-basis: calc((100% - 60px) / 2);
+            flex-basis: calc((100% - 80px) / 4);
             margin-left: 20px;
           }
         `}

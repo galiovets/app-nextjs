@@ -1,7 +1,3 @@
-// import { Schema, model, models } from "mongoose";
-
-// mongoose.Promise = global.Promise;
-
 const mongoose = require("mongoose");
 
 const { Schema } = mongoose;
@@ -21,9 +17,9 @@ const userSchema = new Schema({
       type: String,
     },
   ],
+  socials: {
+    type: Object,
+  },
 });
-
-// const User = model("user", userSchema);
-// export default User;
 
 module.exports = mongoose.models.User || mongoose.model("User", userSchema);

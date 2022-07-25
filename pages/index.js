@@ -1,13 +1,16 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { BsGithub, BsLinkedin } from "react-icons/bs";
 import { fetchData } from "../service/fetchData";
 import DataList from "../components/DataList";
 import Container from "../components/Container";
+import Socials from "../components/Socials";
 
 export default function Home() {
   const [name, setName] = useState([]);
   const [interests, setInterests] = useState([]);
   const [experience, setExperience] = useState([]);
+  const [socials, setSocials] = useState({});
 
   useEffect(() => {
     fetchData().then((users) => {
@@ -20,8 +23,13 @@ export default function Home() {
       users.map(({ experience }) => {
         setExperience(experience);
       });
+      users.map(({ socials }) => {
+        setSocials(socials);
+      });
     });
   }, []);
+
+  const { github, linkedin } = socials;
 
   return (
     <>
@@ -42,6 +50,11 @@ export default function Home() {
         <DataList collection={interests} />
         <h3>Previous Experience</h3>
         <DataList collection={experience} />
+        <div>
+          <p>Please contact me</p>
+          <Socials link={github} icon={<BsGithub />} />
+          <Socials link={linkedin} icon={<BsLinkedin />} />
+        </div>
       </Container>
 
       <style jsx>
@@ -58,7 +71,7 @@ export default function Home() {
           }
 
           h2 {
-            margin: 40px auto 20px;
+            margin: 80px auto 30px;
             font-weight: 600;
             font-size: 35px;
             letter-spacing: 0.05em;
@@ -66,7 +79,6 @@ export default function Home() {
           }
 
           p {
-            // max-width: 768px;
             margin-bottom: 40px;
             font-size: 20px;
             line-height: 1.2;
@@ -78,6 +90,13 @@ export default function Home() {
             font-size: 25px;
             letter-spacing: 0.05em;
             text-align: center;
+          }
+
+          div {
+            position: fixed;
+            bottom: 10px;
+            right: 80px;
+            display: flex;
           }
         `}
       </style>
